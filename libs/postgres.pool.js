@@ -10,4 +10,5 @@ const pool = new Pool ({  //Al momento de crear un nuevo cliente implementará
     database: "my_store"
 });
 
-module.exports = pool;
+module.exports = pool; // Se exporta el pool donde se reutilizará la 
+//primera petición
