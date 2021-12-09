@@ -12,7 +12,7 @@ class UserService {
   async find() {
     const client = await getConnection();
     // const response = await client.query("SELECT * FROM public.tasks");
-    const response = await client.query("SELECT * FROM task");
+    const response = await client.query("SELECT * FROM users");
     return response.rows;
   }
 
