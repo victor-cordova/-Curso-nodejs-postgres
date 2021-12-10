@@ -3,7 +3,7 @@ const boom = require('@hapi/boom');
 
 const pool = require("../libs/postgres.pool");
 
-class ProductsService {
+class ProductService {
 
   constructor(){
     this.products = [];
@@ -36,7 +36,7 @@ class ProductsService {
   }
 
   async find() {
-    const query = "SELECT * FROM task";
+    const query = "SELECT * FROM users";
     const response = await this.pool.query(query); //El pool funciona de manera
     // asíncrona, lo que la variable reponse tendrá el la respuesta del query.
 
@@ -78,4 +78,4 @@ class ProductsService {
 
 }
 
-module.exports = ProductsService;
+module.exports = ProductService;

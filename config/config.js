@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 
 const config = {
     env: process.env.NODE_ENV || "dev", //Indica en que entorno se está 
