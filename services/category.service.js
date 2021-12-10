@@ -1,6 +1,6 @@
 const boom = require('@hapi/boom');
 
-const sequelize = require("../libs/sequelize");
+const sequelize = require("./../libs/sequelize");
 
 class CategoryService {
 
@@ -13,7 +13,7 @@ class CategoryService {
   async find() {
     const query = "SELECT * FROM users";
     // const [data] = await sequelize.query(query);
-    const data = await sequelize.query(query);
+    const [data] = await sequelize.query(query);
     // return response.rows;
     return data;
   }

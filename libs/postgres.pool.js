@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-const { config } = require("../config/config"); //Por medio de estas variables de 
+const { config } = require("./../config/config"); //Por medio de estas variables de 
 //entorno se evita colocar la data del cliente como se muestra abajo.
 
 const USER = encodeURIComponent(config.dbUser); //Se va a proteger el 
