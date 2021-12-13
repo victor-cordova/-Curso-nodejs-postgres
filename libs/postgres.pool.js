@@ -22,4 +22,5 @@ const pool = new Pool({ connectionString: URI });
 //     database: "my_store"
 // });
 
-module.exports = pool;
+module.exports = pool; // Se exporta el pool donde se reutilizará la 
+//primera petición
