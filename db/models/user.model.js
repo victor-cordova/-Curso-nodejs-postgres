@@ -1,4 +1,4 @@
-const { Model, DataTypes, Sequelize } = require("sequelize");
+const { Model, DataTypes} = require("sequelize");
 
 const USER_TABLE = "users"; //Esté será el nombre de la base de datos.
 
@@ -7,24 +7,24 @@ const UserSchema = { //Define la estructura de la DB.
         // allowNull: false, //Lo comenté porque es redundante colocarlo siendo tipo pk
         primaryKey: true,
         autorIncrement: true,
-        type: DataTypes.INTEGER //Se indica el tipo de valor.
+        type: DataTypes.STRING //Se indica el tipo de valor.
     },
     email: {
         allowNull: false,
         type: DataTypes.STRING,
         unique: true
     },
+    name: {
+        allowNull: false,
+        type: DataTypes.STRING,
+    },
     password: {
         allowNull: false,
         type: DataTypes.STRING
     },
-    createdAt: {
+    username: {
         allowNull: false,
-        type: DataTypes.DATE,
-        field: "created_at", //La norma para poner nombres en DB usando _ para separar.
-        //Por ello no puede createdAt, si no created_at.
-        defaultValue: Sequelize.NOW //El valor por defecto es el momento que se colocó una
-        //variable con sequelize
+        type: DataTypes.STRING,
     }
 };
 

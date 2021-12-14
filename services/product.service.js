@@ -1,30 +1,15 @@
 const faker = require('faker');
 const boom = require('@hapi/boom');
 
-// const pool = require("./../libs/postgres.pool");
 const { models } = require("./../libs/sequelize");
 
 class ProductService {
 
   constructor(){
-    // this.products = [];
     this.generate();
-    // this.pool = pool;
-    // this.pool.on("error", (err) => console.error(err)) //Cuando ocurra un error
-    //con el pool, este será impreso.
   }
 
   generate() {
-    // const limit = 100;
-    // for (let index = 0; index < limit; index++) {
-      // this.products.push({
-      //   id: faker.datatype.uuid(),
-      //   name: faker.commerce.productName(),
-      //   price: parseInt(faker.commerce.price(), 10),
-      //   image: faker.image.imageUrl(),
-      //   isBlock: faker.datatype.boolean(),
-      // });
-    // }
   }
 
   async create(data) {
@@ -32,17 +17,16 @@ class ProductService {
       id: faker.datatype.uuid(),
       ...data
     }
+    
     this.products.push(newProduct);
+
     return newProduct;
   }
 
   async find() {
-    // const query = "SELECT * FROM users";
     const response = await models.User.findAll();
-    // const response = await this.pool.query(query); //El pool funciona de manera
-    // asíncrona, lo que la variable reponse tendrá el la respuesta del query.
 
-    return response; //La respuesta mostrará solo rows del objeto response.
+    return response; 
   }
 
   async findOne(id) {
